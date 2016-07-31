@@ -8,3 +8,7 @@ Should you make any other constructors? Why - or why not?
 
 No. (Will come back to this one)
 
+What is a static method? Why would you use it?
+
+A static method is a method that cannot be modified. It can be called, but not modified.
+
