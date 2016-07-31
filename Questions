@@ -1,0 +1,10 @@
+How can you make it impossible to create an instance of Utilities? Why would you want to?
+
+Just like Math, Utilities is a concept. It makes no sense to create a tangible Animal concept, but things like a dog, which are tangible,
+can be derived from the concept of an animal. It makes sense to have a "dog" object, but not an "animal" object, because the word animal
+is a concept. You can do this by making the Utilities constructor private.
+
+Should you make any other constructors? Why - or why not?
+
+No. (Will come back to this one)
+
