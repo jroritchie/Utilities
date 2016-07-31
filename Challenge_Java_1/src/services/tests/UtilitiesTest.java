@@ -63,12 +63,24 @@ public class UtilitiesTest {
 		assertTrue(Utilities.largestPrime(8) == 99999989);
 	}
 	
-	@Test
+	@Test //Warning! Will take a while!
 	public void testLargestPrime9() {
 		assertTrue(Utilities.largestPrime(9) == 999999937);
 	}
-	@Test
+	
+	@Test //Warning! Will take a while!
 	public void testLargestPrime10() {
+		try {
+			Utilities.largestPrime(10);
+			fail("this should throw an Exception");
+		}
+		catch (Exception e) {
+			// pass
+		}
+	}
+	
+	@Test
+	public void testLargestPrime11() {
 		try {
 			Utilities.largestPrime(0);
 			fail("this should throw an Exception");
@@ -76,6 +88,30 @@ public class UtilitiesTest {
 		catch (Exception e) {
 			// pass
 		}
+	}
+	@Test
+	public void testSmallestPrime1() {
+		assertTrue(Utilities.smallestPrime(1) == 2);
+	}
+	
+	@Test
+	public void testSmallestPrime2() {
+		assertTrue(Utilities.smallestPrime(2) == 11);
+	}
+
+	@Test
+	public void testSmallestPrime3() {
+		assertTrue(Utilities.smallestPrime(3) == 101);
+	}
+	
+	@Test
+	public void testSmallestPrime4() {
+		assertTrue(Utilities.smallestPrime(4) == 1009);
+	}
+	
+	@Test
+	public void testSmallestPrime5() {
+		assertTrue(Utilities.smallestPrime(5) == 10007);
 	}
 	
 }
