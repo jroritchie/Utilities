@@ -15,13 +15,18 @@ public class Utilities {
 		if (n < 2) {
 			return 2;
 		}
-		
+				
 		int m = n;
 		
 		n += 1;
 		
 		boolean findPrime = false;
 		while (!findPrime) {
+			if (n == 3) {
+				findPrime = true;
+				System.out.println("3 is the first prime after 2");
+				break;
+			}
 			if (n % 2 == 0) {
 				n += 1;
 				findPrime = false;
@@ -84,7 +89,7 @@ public class Utilities {
 		
 		boolean findPrime = false;
 		if (n == 1) {
-			System.out.println("2 is the smallest prime which contains " + n + " digits.");
+			System.out.println("2 is the smallest prime that contains " + n + " digits.");
 			findPrime = true;
 		}
 		
@@ -105,6 +110,104 @@ public class Utilities {
 			}
 		}
 		return ntest;
+	}
+	
+	public static int nthPrime(int n) throws IllegalArgumentException {
+		
+		if (n <= 0) {
+			throw new IllegalArgumentException("cannot call nthPrime(n) with n < 1");
+		}
+		
+		int m = 2;
+		int z = 3;
+		
+		boolean findPrime = false;
+		if (n == 1) {
+			System.out.println("2 is the 1st prime");
+			findPrime = true;
+		}
+		if (n == 2) {
+			System.out.println("3 is the 2nd prime");
+			findPrime = true;
+		}
+		if (n == 3) {
+			System.out.println("5 is the 3rd prime");
+			findPrime = true;
+		}
+		
+		while (!findPrime) {
+			for (int i = 0; i < 10000000; i++) {
+				if (n == m) {
+					System.out.println((z-2)  + " is the " + m + "th prime.");
+					findPrime = true;
+					break;
+				}
+				if (checkPrime(z) == false) {
+					z += 2;
+					break;
+				}
+				if (checkPrime(z) == true) {
+					z += 2;
+					m += 1;
+					break;
+				}
+			}
+		}
+		return n;
+	}
+	
+	public static int twinPrime(int n) throws IllegalArgumentException {
+		
+		if (n <= 0) {
+			throw new IllegalArgumentException("cannot call nthPrime(n) with n < 1");
+		}
+		
+		int m = 0;
+		int z = 3;
+		int a1 = 0;
+		int a2 = 0;
+		
+		boolean findPrime = false;
+		if (n == 1) {
+			System.out.println("3 and 5 are the 1st prime pair");
+			a1 = 3;
+			findPrime = true;
+		}
+		if (n == 2) {
+			System.out.println("11 and 13 are the 2nd prime pair");
+			a1 = 11;
+			findPrime = true;
+		}
+		if (n == 3) {
+			System.out.println("17 and 19 are the 3rd prime pair");
+			a1 = 17;
+			findPrime = true;
+		}
+		
+		while (!findPrime) {
+			for (int i = 0; i < 10000000; i++) {
+				if (n == m) {
+					System.out.println(a1  + " and " + a2 + " are the " + m + "th twin prime.");
+					findPrime = true;
+					break;
+				}
+				if (checkPrime(z) == false) {
+					z += 2;
+					break;
+				}
+				if (checkPrime(z) == true) {
+					a1 = z;
+					z += 2;
+					if (checkPrime(z) == true) {
+						a2 = z;
+						z += 2;
+						m += 1;
+						break;
+					}
+				}
+			}
+		}
+		return a1;
 	}
 
 	public static boolean checkPrime(int n) {

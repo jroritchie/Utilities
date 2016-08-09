@@ -63,12 +63,12 @@ public class UtilitiesTest {
 		assertTrue(Utilities.largestPrime(8) == 99999989);
 	}
 	
-	@Test //Warning! Will take a while!
-	public void testLargestPrime9() {
-		assertTrue(Utilities.largestPrime(9) == 999999937);
-	}
+//	@Test //Warning! Will take a while!
+//	public void testLargestPrime9() {
+//		assertTrue(Utilities.largestPrime(9) == 999999937);
+//	}
 	
-	@Test //Warning! Will take a while!
+	@Test
 	public void testLargestPrime10() {
 		try {
 			Utilities.largestPrime(10);
@@ -114,4 +114,28 @@ public class UtilitiesTest {
 		assertTrue(Utilities.smallestPrime(5) == 10007);
 	}
 	
+	@Test
+	public void twinPrime1() {
+		assertTrue(Utilities.twinPrime(1) == 3);
+	}
+	
+	@Test
+	public void twinPrime2() {
+		assertTrue(Utilities.twinPrime(2) == 11);
+	}
+	
+	@Test
+	public void twinPrime3() {
+		assertTrue(Utilities.twinPrime(3) == 17);
+	}
+	
+	@Test
+	public void twinPrime4() {
+		assertTrue(Utilities.twinPrime(4) == 29);
+	}
+	
+	@Test
+	public void twinPrime5() {
+		assertTrue(Utilities.twinPrime(5) == 41);
+	}
 }
