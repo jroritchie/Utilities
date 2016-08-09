@@ -89,7 +89,7 @@ public class Utilities {
 		
 		boolean findPrime = false;
 		if (n == 1) {
-			System.out.println("2 is the smallest prime that contains " + n + " digits.");
+			System.out.println("2 is the smallest prime that contains " + n + " digit.");
 			findPrime = true;
 		}
 		
@@ -214,6 +214,10 @@ public class Utilities {
 	
 		if (n < 2) {
 			return false;
+		}
+		
+		if (n == 2) {
+			return true;
 		}
 	
 		boolean checkPrime = false;
