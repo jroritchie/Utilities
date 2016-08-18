@@ -4,10 +4,31 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import services.PasswordCrack;
 import services.Utilities;
 
 public class UtilitiesTest {
 
+	@Test
+	public void checkPrime1() {
+		assertTrue(Utilities.checkPrime(3));
+	}
+	
+	@Test
+	public void checkPrime2() {
+		assertFalse(Utilities.checkPrime(16));
+	}
+	
+	@Test
+	public void checkPrime3() {
+		assertTrue(Utilities.checkPrime(2));
+	}
+	
+	@Test
+	public void checkPrime4() {
+		assertFalse(Utilities.checkPrime(0));
+	}
+	
 	@Test
 	public void testNextPrime1() {
 		assertTrue(Utilities.nextPrime(6) == 7);
@@ -137,5 +158,20 @@ public class UtilitiesTest {
 	@Test
 	public void twinPrime5() {
 		assertTrue(Utilities.twinPrime(5) == 41);
+	}
+	
+	@Test
+	public void goldbach1() {
+		assertTrue(Utilities.goldbach(6) == 3);
+	}
+	
+	@Test
+	public void goldbach2() {
+		assertTrue(Utilities.goldbach(12) == 5);
+	}
+	
+	@Test
+	public void crackPassword() {
+		assertTrue(PasswordCrack.crackPassword("827ccb0eea8a706c4c34a16891f84e7b") == "12345");
 	}
 }
